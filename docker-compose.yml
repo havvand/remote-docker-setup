@@ -24,10 +24,6 @@ services:
     networks:
       - backend
 
-networks:
-  backend:
-    driver: bridge
-
   europe:
     image: "webtrade/europemap"
     container_name: "europemap_container"
@@ -77,3 +73,10 @@ networks:
       - "traefik.http.routers.api.entrypoints=websecure"
       - "traefik.http.routers.api.tls.certresolver=myresolver"
       - "com.centurylinklabs.watchtower.enable=true"
+
+networks:
+
+  backend:  
+    driver: bridge
+
+  
